@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block title%} myapp - Candidate Home Page {%endblock title%}
+{% block top%}
+<a href="{% url 'myapp:home' %}">Signup</a>
+<a href="{% url 'myapp:logout' %}">Logout</a> 
+{%endblock %}
+{% block content %}
+<h1>Welcome {{request.session.name}}, to your home page</h1>
+<div class="button-link">
+    <a href="{% url 'myapp:testPaper' %}?n=1">Test of 1 Question</a>
+</div>
+<div class="button-link">
+    <a href="{% url 'myapp:testPaper' %}?n=3">Test of 3 Question</a>
+</div>
+<div class="button-link">
+    <a href="{% url 'myapp:testPaper' %}?n=5">Test of 5 Question</a>
+</div>
+
+<div class="button-link">
+    <a href="{% url 'myapp:testHistory' %}">Test History</a>
+</div>
+<h2>Welcome {{ name }}</h2>
+
+{% endblock %}
