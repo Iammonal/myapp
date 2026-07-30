@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block title%} myapp - Test Result {%endblock title%}
+{% block top%}
+<a href="{% url 'myapp:home' %}">Home</a>
+<a href="{% url 'myapp:logout' %}">Logout</a> 
+{%endblock %}
+{% block content %}
+<h2>Online Testing System</h2>
+
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Attempt</th>
+        <th>Right</th>
+        <th>Wrong</th>
+        <th>Points</th>
+    </tr>
+    {% for res in results%}
+     <tr>
+        <td>{{r.date}}</td>
+        <td>{{r.time}}</td>
+        <td>{{r.attempt}}</td>
+        <td>{{r.right}}</td>
+        <td>{{r.wrong}}</td>
+        <td>{{r.points}}</td>
+     </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
